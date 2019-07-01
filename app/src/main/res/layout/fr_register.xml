@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+                                       xmlns:app="http://schemas.android.com/apk/res-auto"
+                                       xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+                                       android:layout_height="match_parent"
+                                       android:background="@color/white">
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+                                                       android:layout_height="match_parent">
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginRight="16dp" android:layout_marginEnd="16dp" android:id="@+id/nameContainer"
+                android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintHorizontal_bias="0.5" app:layout_constraintBottom_toTopOf="@+id/phoneContainer"
+                app:layout_constraintVertical_chainStyle="packed" app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:hint="@string/enter_name" android:maxLines="1" android:id="@+id/nameRegister"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/nameContainer"
+                android:layout_marginLeft="8dp" android:layout_marginStart="8dp"
+                app:layout_constraintEnd_toEndOf="parent" android:layout_marginRight="16dp"
+                android:layout_marginEnd="16dp"
+                android:id="@+id/phoneContainer" app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintBottom_toTopOf="@+id/addressContainer" app:errorEnabled="true"
+                app:layout_constraintStart_toEndOf="@+id/textView">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:hint="@string/enter_phone_number" android:id="@+id/phoneRegsiter" android:inputType="phone"
+                    android:maxLines="1"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <TextView
+                android:text="+971"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp" android:id="@+id/textView" android:layout_weight="1"
+                app:layout_constraintTop_toTopOf="@+id/phoneContainer"
+                app:layout_constraintBottom_toBottomOf="@+id/phoneContainer"
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="24dp"
+                android:layout_marginStart="24dp" android:gravity="center"
+                android:drawableEnd="@drawable/ic_arrow_drop_down_black"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" tools:text="+971"/>
+        <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginRight="16dp" android:layout_marginEnd="16dp" android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/phoneContainer" android:id="@+id/addressContainer"
+                app:layout_constraintHorizontal_bias="0.5" app:layout_constraintBottom_toTopOf="@+id/passwordContainer"
+                app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/enter_address" android:id="@+id/addressRegsiter" android:minLines="3"
+                    android:gravity="start"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/addressContainer"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginLeft="16dp" android:layout_marginStart="16dp"
+                app:layout_constraintEnd_toEndOf="parent" android:layout_marginRight="16dp"
+                android:layout_marginEnd="16dp"
+                android:id="@+id/passwordContainer" app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintBottom_toTopOf="@+id/confirmPasswordContainer" app:errorEnabled="true"
+                app:passwordToggleEnabled="true" app:helperTextEnabled="true"
+                app:helperTextTextColor="@color/colorPrimary">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:hint="@string/enter_password" android:id="@+id/passwordRegsiter"
+                    android:inputType="textPassword" android:maxLines="1"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/passwordContainer"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginLeft="16dp" android:layout_marginStart="16dp"
+                app:layout_constraintEnd_toEndOf="parent" android:layout_marginRight="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="8dp"
+                android:id="@+id/confirmPasswordContainer" app:layout_constraintVertical_bias="0.0"
+                app:layout_constraintHorizontal_bias="0.5" app:layout_constraintBottom_toTopOf="@+id/registerButton"
+                app:errorEnabled="true" app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:hint="@string/confirm_password" android:id="@+id/confirmPasswordRegsiter"
+                    android:inputType="textPassword" android:maxLines="1"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <Button
+                android:text="@string/register"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/registerButton" android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/confirmPasswordContainer"
+                app:layout_constraintStart_toStartOf="@+id/confirmPasswordContainer"
+                app:layout_constraintEnd_toEndOf="@+id/confirmPasswordContainer"
+                app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintHorizontal_bias="0.5"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
